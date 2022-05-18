@@ -16,3 +16,7 @@ for h3 in soup.find_all('h3'):
     ##可以在回傳的物件中加入想要搜尋的下層標籤，這樣就可以看到只想要的內容
     print(h3.a)
     #往標籤下層尋找
+
+#用class取得網頁中元素資料
+for title in soup.find_all('h3', 'post-title'):
+    print(title.a)
