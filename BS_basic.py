@@ -24,3 +24,8 @@ for title in soup.find_all('h3', 'post-title'):
 #使用key-value取得網頁中元素資料
 for content in soup.find_all('a', {'class':'post-category', 'class':'cat-1'}): #在key-value值前，第一個參數要放該元素的tag，再放class
     print('content',content)
+
+#分離子標籤中的文字內容、移除空白及跳行符號
+for posts in soup.find_all('div', {'class':'post-body'}):
+    for post in posts.stripped_strings:
+        print(post)    
