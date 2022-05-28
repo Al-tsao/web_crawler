@@ -29,3 +29,8 @@ for content in soup.find_all('a', {'class':'post-category', 'class':'cat-1'}): #
 for posts in soup.find_all('div', {'class':'post-body'}):
     for post in posts.stripped_strings:
         print(post)    
+
+#取得父節點中所有資料
+nav = soup.find(id = 'nav')
+header = nav.parent
+print(header)
