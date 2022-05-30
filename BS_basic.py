@@ -1,3 +1,4 @@
+from cgi import print_arguments
 import requests
 from bs4 import BeautifulSoup
 
@@ -34,3 +35,9 @@ for posts in soup.find_all('div', {'class':'post-body'}):
 nav = soup.find(id = 'nav')
 header = nav.parent
 print(header)
+
+#尋找平行的兄弟節點
+javascript = soup.find('li', 'cat-2')
+print(javascript)
+print(javascript.previous_sibling)
+print(javascript.next_sibling)
