@@ -41,3 +41,8 @@ javascript = soup.find('li', 'cat-2')
 print(javascript)
 print(javascript.previous_sibling)
 print(javascript.next_sibling)
+
+#尋找子節點
+ul = soup.find('ul')
+for li in ul.children:
+    print(li.find('a'))
