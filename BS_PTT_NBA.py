@@ -11,3 +11,4 @@ def pttNBA(url):
         return
     
     soup = BeautifulSoup(resp.text, 'html5lib')
+    paging = soup.find('div', 'btn-group btn-group-paging').find_all('a')[1]['href']
