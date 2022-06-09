@@ -31,10 +31,10 @@ def pttNBA(url):
     for article in articles:
         print(article)
 
-    # if len(articles) != 0:
+    # if len(articles) != 0: 
     #     for article in articles:
     #         print(article)
-    #     pttNBA('https://www.ptt.cc' + paging)
+    #     pttNBA('https://www.ptt.cc' + paging) #利用迴圈重複執行這個function，可以一直往前找文章
     # else:
     #     return
 
