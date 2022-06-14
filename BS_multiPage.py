@@ -12,3 +12,11 @@ def getData(url):
     #利用Request物件打開網址
     with req.urlopen(request) as response:
         data = response.read().decode("utf-8") #如果沒有用request物件來打開網頁，很容易會被擋掉，因為request物件會帶有一些使用者資訊
+
+    #解析原始碼，取得內文
+    import bs4
+    root = bs4.BeautifulSoup(data, "html.parser")
+    titles = root.find_all("div", class_="title") #尋找所有class="title"的標籤
+    for title in titles:
+        if title.a != None:
+            print(title.a.string) #如果div底下還有包其他的tag，可以直接用.往下取，然後如果要取文字就直接打.string
