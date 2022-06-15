@@ -20,3 +20,7 @@ def getData(url):
     for title in titles:
         if title.a != None:
             print(title.a.string) #如果div底下還有包其他的tag，可以直接用.往下取，然後如果要取文字就直接打.string
+
+    #抓取上一頁連結
+    nextLink = root.find("a", string="‹ 上頁") #找到內文是有‹ 上頁的a標籤
+    return nextLink["href"] #抓取上一頁的連結
