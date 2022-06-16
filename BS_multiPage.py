@@ -24,3 +24,10 @@ def getData(url):
     #抓取上一頁連結
     nextLink = root.find("a", string="‹ 上頁") #找到內文是有‹ 上頁的a標籤
     return nextLink["href"] #抓取上一頁的連結
+    
+#看要抓取的頁數
+pageURL = "https://www.ptt.cc/bbs/Gossiping/index.html"
+count = 0
+while count < 3:
+    pageURL = "https://www.ptt.cc" + getData(pageURL)
+    count += 1
