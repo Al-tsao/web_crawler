@@ -14,4 +14,13 @@ def getTrip():
         print('URL發生錯誤' + url)
         return
 
-    soup = BeautifulSoup(rep.text, 'html5lib')
+    soup = BeautifulSoup(resp.text, 'html5lib')
+    stations = soup.find(id = 'cityHot').ul.find_all('li')
+    for station in stations:
+        stationName = station.button.text
+        stationId = station.button['title']
+        staDic[stationName] = stationId
+
+    print(staDic)
+
+getTrip()
