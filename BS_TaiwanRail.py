@@ -36,6 +36,12 @@ def getTrip():
         'endTime':eTime, 
         '_csrf':csrf
     }
-
+    queryUrl = soup.find(id='queryForm')['action']
+    qResp = requests.post('https://tip.railway.gov.tw'+queryUrl, data=formData)
+    qSoup = BeautifulSoup(qResp.text, 'html5lib')
+    trs = qSoup.find_all('tr', 'trip-column')
+    for tr in trs:
+        td = tr.find_all('td')
+        print('%s : %s, %s' % (td[0].ul.li.a.text, td[1].text, td[2].text)) 
 
 getTrip()
