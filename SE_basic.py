@@ -1,9 +1,5 @@
 from bs4 import BeautifulSoup
-
-
-from bs4 import BeautifulSoup
 from selenium import webdriver
-import soupsieve
 
 try:
     options = webdriver.ChromeOptions()
@@ -13,5 +9,9 @@ try:
     chrome.get('https://code-gym.github.io/spider_demo/')
     soup = BeautifulSoup(chrome.page_source, 'html5lib')
     print(soup.find('h1').text)
+
+    chrome.find_element('xpath', '/html/body/div[2]/div/div[1]/div[1]/div/div/h3/a').click()
+    
+
 finally:
     chrome.quit()
