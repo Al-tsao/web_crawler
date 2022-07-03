@@ -11,7 +11,7 @@ try:
     print(soup.find('h1').text)
 
     chrome.find_element('xpath', '/html/body/div[2]/div/div[1]/div[1]/div/div/h3/a').click()
-    
+    print(chrome.find_element('xpath', '//*[@id="post-header"]/div[2]/div/div/h1').text)
 
 finally:
     chrome.quit()
