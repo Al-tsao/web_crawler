@@ -19,4 +19,9 @@ try:
         for tr in trs:
             tds = [td for td in tr.children]
             rk = tds[0].text.strip()
+            if rk =='RK' or len(tds)<2:
+                continue
+            name = tds[1].text
+            per = tds[11].text
+            print('%s :%s' % (name, per))
 finally:
