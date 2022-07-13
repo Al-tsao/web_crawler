@@ -24,4 +24,7 @@ try:
             name = tds[1].text
             per = tds[11].text
             print('%s :%s' % (name, per))
+        wait = random.randint(2,6)
+        print('wait time : %d' % wait)
+        time.sleep(wait)
 finally:
