@@ -28,3 +28,4 @@ try:
         print('wait time : %d' % wait)
         time.sleep(wait)
 finally:
+     chrome.quit()
