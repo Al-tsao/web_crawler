@@ -3,14 +3,14 @@ from bs4 import BeautifulSoup
 import time
 import random
 
-url = 'https://insider.espn.com/nba/hollinger/statistics/_/page/1'
+url = 'https://insider.espn.com/nba/hollinger/statistics/_/page/'
 
 try:
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     chrome = webdriver.Chrome(options=options, executable_path='chromedriver.exe')
     chrome.set_page_load_timeout(10)
-    for i in range (1, 9):
+    for i in range (1, 2):
         _url = url + str(i)
         print(_url)
         chrome.get(_url)
